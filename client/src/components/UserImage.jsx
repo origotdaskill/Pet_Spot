@@ -8,7 +8,7 @@ const UserImage = ({ image, size = "60px" }) => {
         width={size}
         height={size}
         alt="user"
-        src={`http://localhost:10000/assets/${image}`}
+        src={`https://petspot-backend-walids-projects-fc600ccd.vercel.app//assets/${image}`}
       />
     </Box>
   );
