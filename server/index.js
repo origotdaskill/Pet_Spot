@@ -60,3 +60,11 @@ mongoose
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
   })
   .catch((error) => console.log(`${error} did not connect`));
+
+  /* CORS SETUP */
+
+  app.use(cors({
+    origin: ['https://pet-spot-frontend.vercel.app'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE' ,'OPTIONS','PATCH'],
+    credentials: true
+  }));
