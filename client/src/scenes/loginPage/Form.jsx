@@ -76,7 +76,7 @@ const Form = () => {
     formData.append("picturePath", values.picture.name);
 
     const savedUserResponse = await fetch(
-      "https://petspot-backend-walids-projects-fc600ccd.vercel.app//auth/register",
+      "https://pet-spot-backend.vercel.app/auth/register",
       {
         method: "POST",
         body: formData,
@@ -91,7 +91,7 @@ const Form = () => {
   };
 
   const login = async (values, onSubmitProps) => {
-    const loggedInResponse = await fetch("https://petspot-backend-walids-projects-fc600ccd.vercel.app//auth/login", {
+    const loggedInResponse = await fetch("https://pet-spot-backend.vercel.app/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(values),

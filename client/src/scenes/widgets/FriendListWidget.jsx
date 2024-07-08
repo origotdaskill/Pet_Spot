@@ -13,7 +13,7 @@ const FriendListWidget = ({ userId }) => {
 
   const getFriends = async () => {
     const response = await fetch(
-      `https://petspot-backend-walids-projects-fc600ccd.vercel.app//users/${userId}/friends`,
+      `https://pet-spot-backend.vercel.app/users/${userId}/friends`,
       {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
