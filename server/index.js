@@ -62,9 +62,19 @@ mongoose
   .catch((error) => console.log(`${error} did not connect`));
 
   /* CORS SETUP */
-
   app.use(cors({
     origin: ['https://pet-spot-frontend.vercel.app'],
     methods: ['GET', 'POST', 'PUT', 'DELETE' ,'OPTIONS','PATCH'],
     credentials: true
   }));
+
+  app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://pet-spot-frontend.vercel.app');
+    res.header('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+    res.header('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    if (req.method === 'OPTIONS') {
+      return res.sendStatus(204);
+    }
+    next();
+  });
