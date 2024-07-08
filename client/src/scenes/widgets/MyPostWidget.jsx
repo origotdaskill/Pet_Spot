@@ -46,7 +46,7 @@ const MyPostWidget = ({ picturePath }) => {
       formData.append("picturePath", image.name);
     }
 
-    const response = await fetch(`https://pet-spot-backend.vercel.app/posts`, {
+    const response = await fetch(`http://localhost:10000/posts`, {
       method: "POST",
       headers: { Authorization: `Bearer ${token}` },
       body: formData,

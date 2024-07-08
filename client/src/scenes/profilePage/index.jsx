@@ -15,7 +15,7 @@ const ProfilePage = () => {
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
 
   const getUser = async () => {
-    const response = await fetch(`https://pet-spot-backend.vercel.app/users/${userId}`, {
+    const response = await fetch(`http://localhost:10000/users/${userId}`, {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     });

@@ -23,7 +23,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
 
   const patchFriend = async () => {
     const response = await fetch(
-      `https://pet-spot-backend.vercel.app/users/${_id}/${friendId}`,
+      `http://localhost:10000/users/${_id}/${friendId}`,
       {
         method: "PATCH",
         headers: {
